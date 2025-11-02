@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title_prefix %}{% endblock title_prefix %}mblog</title>
+    <style>
+        .post-content {
+            border: 1px dotted;
+        }
+    </style>
   </head>
   <body>
+      <h1>mblog</h1>
+
+      <h3>Recent posts:</h3>
       {% block content %}{% endblock content %}
   </body>
 </html>

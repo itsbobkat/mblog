@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
+from datetime import timedelta
 
 User = get_user_model()
 
@@ -19,3 +20,8 @@ class Post(models.Model):
     )
     inserted_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    @property
+    def is_updated(self) -> bool:
+        return self.inserted_at - self.updated_at > timedelta(minutes=1) 
+
+        
