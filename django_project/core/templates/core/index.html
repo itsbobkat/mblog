@@ -5,8 +5,12 @@
     {% if post.title %}
     <h3>{{ post.title }}</h3>
     {% endif %}
-    <p>{{ post.content }}</p>
+    <p class="post-content">{{ post.content }}</p>
     <p>Posted by {{ post.author.username }}</p>
+    <p>Posted at {{ post.inserted_at }}</p>
+    {% if post.is_updated %}
+    <p>Updated at {{ post.updated_at }}</p>
+    {% endif %}
 </div>
 <hr>
 
